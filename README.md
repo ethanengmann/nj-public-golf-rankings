@@ -43,8 +43,6 @@ A manually constructed price → value mapping:
 - `sat_noon_price_usd` – representative weekend price  
 - `value_score` – perceived value (1–10)
 
-This curve was built by observing NJ public golf pricing and calibrating how much “value” each price point represents.
-
 ---
 
 ## Methodology
@@ -56,27 +54,25 @@ For each course:
 ```text
 golf_quality = (layout_score + difficulty_score + conditions_score) / 3
 ```
-### **2. Price -> Value Curve**
 
-Saturday 12–2 PM prices are mapped to a 1–10 value scale using price_lookup_curve.csv.
+### **2. Price → Value Curve**
+
+Saturday 12–2 PM prices are mapped to a 1–10 value scale using `price_lookup_curve.csv`.
 
 This same mapping is applied:
 
 - In **Excel** using `XLOOKUP`
-
-In **Python** for reproducibility
+- In **Python** for reproducibility
 
 ### **3. Final Rankings**
 
 `value_score` is combined with `golf_quality` to compute:
 
-**value_quality** – price-adjusted quality
+- **value_quality** – price-adjusted quality  
+- **composite_score** – overall score used to rank courses  
+- **rank_position** – final ranking (1 = best)  
 
-**composite_score** – overall score used to rank courses
-
-**rank_position** – final ranking (1 = best)
-
-All scoring is formula-driven.
+All scoring is formula-driven.  
 Changing any course’s price or rating automatically updates rankings.
 
 ---
@@ -85,32 +81,25 @@ Changing any course’s price or rating automatically updates rankings.
 
 The `notebooks/` folder will include Jupyter notebooks such as:
 
-- Score and price distribution analysis
-
-- Price vs. composite score scatter plots
-
-- Top/bottom courses by individual metrics
-
-- (Optional) interactive folium map
+- Score and price distribution analysis  
+- Price vs. composite score scatter plots  
+- Top/bottom courses by individual metrics  
+- (Optional) interactive folium map  
 
 ---
 
 ## Tech Stack
 
-- Python – analysis + potential scraping
-
-- pandas – data wrangling
-
-- matplotlib – visualization
-
-- folium – mapping (planned)
+- **Python** – analysis + potential scraping  
+- **pandas** – data wrangling  
+- **matplotlib** – visualization  
+- **folium** – mapping (planned)  
 
 ---
 
 ## Future Work
 
-Scrape updated pricing from course websites (where permitted)
+- Scrape updated pricing from course websites (where permitted)  
+- Add additional states/regions  
+- Incorporate online review sentiment  
 
-Add additional states/regions
-
-Incorporate online review sentiment
