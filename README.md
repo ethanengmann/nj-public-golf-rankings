@@ -21,30 +21,6 @@ All data lives in the `data/` folder:
 
 One row per course with:
 
-
-# NJ Public Golf Course Rankings
-
-This project ranks public golf courses in New Jersey using a custom model that blends on-course quality with real-world pricing.
-
-As a scratch golfer who has played most of these courses, I built a structured scoring system that:
-
-- Rates **layout**, **difficulty**, and **conditions** on a 1–10 scale  
-- Collects **Saturday 12–2 PM prices** from course websites  
-- Converts prices into a **value score** using a calibrated price → value curve  
-- Combines golf quality and value into a final **composite score** and ranking  
-
-The goal is to turn personal golf knowledge into a reproducible, data-driven analytics project.
-
----
-
-## Data
-
-All data lives in the `data/` folder:
-
-### **`nj_public_courses_ratings.csv`**
-
-One row per course with:
-
 - `course` – course name  
 - `county` – county in New Jersey  
 - `layout_score` – 1–10 rating of routing/design  
