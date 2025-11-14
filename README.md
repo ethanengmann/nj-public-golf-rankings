@@ -79,53 +79,59 @@ For each course:
 
 ```text
 golf_quality = (layout_score + difficulty_score + conditions_score) / 3
-
-**1. Golf Quality**
+```
+### **2. Price -> Value Curve**
 
 Saturday 12–2 PM prices are mapped to a 1–10 value scale using price_lookup_curve.csv.
 
 This same mapping is applied:
 
-In Excel using XLOOKUP
+- In **Excel** using `XLOOKUP`
 
-In Python for reproducibility
+In **Python** for reproducibility
 
-3. Final Rankings
+### **3. Final Rankings**
 
-value_score is combined with golf_quality to compute:
+`value_score` is combined with `golf_quality` to compute:
 
-value_quality – price-adjusted quality
+**value_quality** – price-adjusted quality
 
-composite_score – overall score used to rank courses
+**composite_score** – overall score used to rank courses
 
-rank_position – final ranking (1 = best)
+**rank_position** – final ranking (1 = best)
 
 All scoring is formula-driven.
 Changing any course’s price or rating automatically updates rankings.
 
-Analysis (Coming Soon)
+---
 
-The notebooks/ folder will include Jupyter notebooks such as:
+## Analysis (Coming Soon)
 
-Score and price distribution analysis
+The `notebooks/` folder will include Jupyter notebooks such as:
 
-Price vs. composite score scatter plots
+- Score and price distribution analysis
 
-Top/bottom courses by individual metrics
+- Price vs. composite score scatter plots
 
-(Optional) interactive folium map
+- Top/bottom courses by individual metrics
 
-Tech Stack
+- (Optional) interactive folium map
 
-Python – analysis + potential scraping
+---
 
-pandas – data wrangling
+## Tech Stack
 
-matplotlib – visualization
+- Python – analysis + potential scraping
 
-folium – mapping (planned)
+- pandas – data wrangling
 
-Future Work
+- matplotlib – visualization
+
+- folium – mapping (planned)
+
+---
+
+## Future Work
 
 Scrape updated pricing from course websites (where permitted)
 
